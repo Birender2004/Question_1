@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class data{
+    public static void main(String[] arg){
+        Scanner input=new Scanner(System.in);
+
+        System.out.print("Enter age:");
+
+        int age= input.nextInt();
+
+        System.out.print("Enter income:");
+        double income=input.nextDouble();
+
+        System.out.print("Enter pending dues:");
+        boolean dues=input.nextBoolean();
+
+        boolean check=true;
+
+        if(age<18) check=false;
+
+        if(income<30000) check=false;
+
+        String output=check && !(dues) ?"You are eligible for premium":"You are not eligible for premium";
+
+        System.out.print(output);
+
+    }
+}
