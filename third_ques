@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class data{
+    public static void main(String[] arg){
+
+        System.out.print("Enter total amount: ");
+        
+        Scanner input=new Scanner(System.in);
+
+        int tot_amount= input.nextInt();
+
+        System.out.println("Input: Rs."+tot_amount);
+
+        double discount=0;
+
+        if(tot_amount>5000) discount=(tot_amount*20)/(double)100;
+
+        else if(tot_amount>=3000 && tot_amount<=5000) discount=(tot_amount*10)/(double)100;
+
+        else if(tot_amount<3000) discount=0;
+
+        double Final= (double)tot_amount - discount;
+
+        System.out.println("Discount: Rs."+discount);
+
+        System.out.println("Final amount: Rs."+Final);
+
+
+
+
+
+
+
+    }
+
+}
