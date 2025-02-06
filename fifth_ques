@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in); 
+
+        System.out.print("Enter current permissions (0-15): ");
+        int permissions = input.nextInt();
+
+        if (permissions < 0 || permissions > 15) {
+            System.out.println("Invalid input! Permissions must be between 0 and 15.");
+            return;
+        }
+
+        System.out.print("Enter the bit position to toggle (0-3): ");
+        int bitPosition = input.nextInt();
+
+        if (bitPosition < 0 || bitPosition > 3) {
+            System.out.println("Invalid input! Bit position must be between 0 and 3.");
+            return;
+        }
+
+        String originalBinary = String.format("%4s", Integer.toBinaryString(permissions)).replace(' ', '0');
+
+        int updatedPermissions = permissions ^ (1 << bitPosition);
+
+        String updatedBinary = String.format("%4s", Integer.toBinaryString(updatedPermissions)).replace(' ', '0');
+
+        System.out.println("Original permissions: " + originalBinary);
+        System.out.println("Updated permissions: " + updatedBinary);
+
+    }
+}
